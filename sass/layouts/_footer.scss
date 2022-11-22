@@ -2,18 +2,18 @@
   padding: 60px 0;
   background-color: var(--footer-bc);
 
-  &__container {
-    // display: flex;
-    align-items: baseline;
-  }
+  //   &__container {
+  //     // display: flex;
+  //     align-items: baseline;
+  //   }
   //   &__address {
   //     // margin-top: 20px;
   //     font-style: normal;
   //   }
-  &__form {
-    // display: flex;
-    width: 570px;
-  }
+  //   &__form {
+  //     // display: flex;
+  //     // margin-top: 20px;
+  //   }
 }
 
 .footer__logo {
@@ -97,6 +97,7 @@
   margin-top: 60px;
 
   &-text {
+    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
 
@@ -109,6 +110,9 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
+    @media screen and (min-width: 480px) {
+      justify-content: center;
+    }
   }
 
   .join-item + .join-item {
@@ -143,11 +147,12 @@
 }
 
 .signup {
-  margin-left: auto;
+  margin-top: 60px;
 
   &-text {
     font-weight: 700;
     margin-bottom: 20px;
+    text-align: center;
     text-transform: uppercase;
 
     color: var(--tertiary-text-color);
@@ -155,6 +160,9 @@
   }
 
   .footer-input {
+    @media screen and (min-width: 480px) {
+      width: 450px;
+    }
     width: 358px;
     height: 50px;
     padding: 15px 16px;
@@ -169,6 +177,9 @@
   }
 
   &-button {
+    @media screen and (min-width: 480px) {
+      margin: 20px auto 0;
+    }
     position: relative;
     width: 200px;
     margin-left: 12px;
