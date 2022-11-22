@@ -42,6 +42,12 @@ section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+@media screen and (max-width: 1199px) {
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
 
 .title {
   margin-bottom: 50px;
@@ -180,11 +186,24 @@ label {
   }
 }
 .container {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .backdrop {
@@ -569,29 +588,69 @@ label {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  display: flex;
 }
-.properties__list .properties__item + .properties__item {
-  margin-left: 30px;
+@media screen and (min-width: 768px) {
+  .properties__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .properties__list {
+    display: flex;
+    flex-wrap: nowrap;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .properties__item .properties__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .properties__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .properties__item {
+    flex-basis: calc((100% - 90px) / 4);
+  }
 }
 
 .properties__content {
-  width: 270px;
+  width: 450px;
   height: 120px;
+  padding: 25px 190px;
   background-color: var(--button-bc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  .properties__content {
+    width: 354px;
+    height: 120px;
+    padding: 25px 142px;
+    background-color: var(--button-bc);
+    border-radius: 4px;
+  }
 }
 
 .properties__title {
   margin-top: 30px;
-  font-size: 14px;
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.1;
   text-transform: uppercase;
+  text-align: center;
   color: var(--primary-text-color);
+}
+@media screen and (min-width: 768px) {
+  .properties__title {
+    display: flex;
+  }
 }
 
 .properties__text {
