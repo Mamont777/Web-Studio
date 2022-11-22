@@ -33,20 +33,19 @@
 }
 .footer__list {
   @include list;
+}
+
+.footer__item {
   @media screen and (max-width: 767px) {
-    .footer__item:not(:last-child) {
+    padding: 0 124px;
+    &:not(:last-child) {
       margin-bottom: 12px;
     }
   }
 }
 
-.footer__item {
-  @media screen and (min-width: 480px) {
-    padding: 0 124px;
-  }
-}
 // .footer__list .footer__item:nth-child(n + 2) {
-//   margin-top: 9px;
+//   margin-top: 9px
 // }
 
 .footer__link {
