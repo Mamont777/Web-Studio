@@ -61,15 +61,6 @@
   }
 }
 
-// .properties__title {
-//   margin-top: 30px;
-//   font-size: 14px;
-//   font-weight: 700;
-//   line-height: 1.1;
-//   text-transform: uppercase;
-//   color: var(--primary-text-color);
-// }
-
 .properties__title {
   margin-top: 30px;
   font-weight: 700;
@@ -87,6 +78,8 @@
 
 .properties__text {
   margin-top: 10px;
+
+  font-weight: 400;
   line-height: 1.7;
   color: var(--secondary-text-color);
 }
