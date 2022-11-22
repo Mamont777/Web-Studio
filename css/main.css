@@ -841,9 +841,6 @@ label {
 .footer__container {
   align-items: baseline;
 }
-.footer__address {
-  font-style: normal;
-}
 .footer__form {
   width: 570px;
 }
@@ -859,22 +856,26 @@ label {
 }
 @media screen and (min-width: 480px) {
   .footer__logo {
-    margin-bottom: 28px;
-    padding: 0 163px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     font-size: 24px;
   }
+}
+
+.footer__contacts {
+  margin-top: 28px;
 }
 
 .footer__list {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  text-align: center;
+  font-style: normal;
 }
 
 @media screen and (max-width: 767px) {
-  .footer__item {
-    padding: 0 124px;
-  }
   .footer__item:not(:last-child) {
     margin-bottom: 12px;
   }
@@ -915,7 +916,7 @@ label {
 }
 
 .join {
-  margin-left: 70px;
+  margin-top: 60px;
 }
 .join-text {
   font-weight: 700;
