@@ -1,14 +1,26 @@
 .clients__list {
   @include list;
-  display: flex;
 
-  .clients__item + .clients__item {
-    margin-left: 30px;
+  @media screen and (min-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .clients__item {
-    width: 170px;
     height: 92px;
+
+    @media screen and (max-width: 767px) {
+      flex-basis: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 60px) / 3);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 5 * 30px) / 6);
+    }
   }
 
   .clients__link {
@@ -26,6 +38,22 @@
     &:focus {
       color: var(--accent-color);
     }
+  }
+}
+
+.clients__title {
+  @media screen and (min-width: 480px) {
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+    font-size: 36px;
   }
 }
 

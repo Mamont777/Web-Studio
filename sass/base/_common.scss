@@ -8,10 +8,9 @@ body {
 
 section {
   @media screen and (max-width: 1199px) {
-    padding-top: 60px;
     padding-bottom: 60px;
   }
-  padding-top: 94px;
+
   padding-bottom: 94px;
 }
 
@@ -21,5 +20,6 @@ section {
   font-size: 36px;
   line-height: 1.2;
   text-align: center;
+  letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
