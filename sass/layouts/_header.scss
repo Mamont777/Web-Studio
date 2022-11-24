@@ -3,6 +3,7 @@
   border-bottom-style: solid;
 
   border-bottom-color: var(--page-header-bc);
+
   .container {
     display: flex;
     align-items: center;
@@ -13,7 +14,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
     transition: color 250ms var(--timing-function);
@@ -39,6 +40,14 @@
       border-radius: 2px;
       transition: color 250ms var(--timing-function);
     }
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 5vw;
+    }
   }
 }
 
@@ -46,10 +55,23 @@
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 26px;
   line-height: 1.2;
-  color: var(--logo-color);
   text-decoration: none;
+  letter-spacing: 0.03em;
+
+  color: var(--logo-color);
+
+  @media screen and (min-width: 480px) {
+    padding: 16px 0;
+    font-size: 24px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 26px 0;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0;
+    font-size: 26px;
+  }
 }
 
 .colortext {
@@ -63,6 +85,64 @@
 
 /*---------- Navigation---------- */
 
+.menu-mobile {
+  position: relative;
+  z-index: 22;
+  display: flex;
+  margin-left: 276px;
+  padding: 10px 0;
+
+  border: none;
+  color: var(--primary-text-color);
+  background-color: transparent;
+
+  &:hover .mobile-icon,
+  &:focus .mobile-icon {
+    fill: var(--accent-color);
+  }
+  &.is-open {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+  }
+  .icon-cross {
+    display: none;
+  }
+
+  &.is-open {
+    .icon-cross {
+      display: block;
+    }
+
+    .icon-menu {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-container {
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+    z-index: 21;
+    display: none;
+
+    background-color: var(--tertiary-text-color);
+
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -75,6 +155,9 @@
   margin-left: 93px;
   .item + .item {
     margin-left: 50px;
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
   }
 }
 

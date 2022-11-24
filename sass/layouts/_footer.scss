@@ -2,22 +2,28 @@
   padding: 60px 0;
   background-color: var(--footer-bc);
 
-  //   &__container {
-  //     // display: flex;
-  //     align-items: baseline;
-  //   }
-  //   &__address {
-  //     // margin-top: 20px;
-  //     font-style: normal;
-  //   }
-  //   &__form {
-  //     // display: flex;
-  //     // margin-top: 20px;
-  //   }
+  &__container {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline;
+    }
+
+    @media screen and (min-width: 1200px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__address {
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 60px;
+    }
+  }
 }
 
 .footer__logo {
-  @media screen and (min-width: 480px) {
+  @media screen and (max-width: 1199px) {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -48,10 +54,6 @@
     }
   }
 }
-
-// .footer__list .footer__item:nth-child(n + 2) {
-//   margin-top: 9px
-// }
 
 .footer__link {
   font-weight: 400;
@@ -94,9 +96,11 @@
 }
 
 .join {
-  margin-top: 60px;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
 
-  &-text {
+  &__text {
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
@@ -105,7 +109,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  &-list {
+  &__list {
     @include list;
     display: flex;
     align-items: center;
@@ -115,16 +119,16 @@
     }
   }
 
-  .join-item + .join-item {
+  .join__item + .join__item {
     margin-left: 10px;
   }
 
-  &-item {
+  &__item {
     width: 44px;
     height: 44px;
   }
 
-  &-link {
+  &__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,14 +146,19 @@
   }
 }
 
-.social-icon {
+.social__icon {
   fill: currentColor;
 }
 
 .signup {
-  margin-top: 60px;
+  &__form {
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+    }
+  }
 
-  &-text {
+  &__text {
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
@@ -159,11 +168,14 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  .footer-input {
+  .footer__input {
     @media screen and (min-width: 480px) {
       width: 450px;
     }
-    width: 358px;
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+    }
+    width: 100%;
     height: 50px;
     padding: 15px 16px;
     font-size: 16px;
@@ -176,8 +188,8 @@
     border-radius: 4px;
   }
 
-  &-button {
-    @media screen and (min-width: 480px) {
+  &__button {
+    @media screen and (max-width: 1199px) {
       margin: 20px auto 0;
     }
     position: relative;
@@ -203,7 +215,7 @@
   }
 }
 
-.send-icon {
+.signup__icon {
   position: absolute;
   margin-left: 10px;
 }

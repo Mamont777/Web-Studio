@@ -2,7 +2,7 @@
   @include list;
 
   @media screen and (max-width: 767px) {
-    .properties__item:not(:last-child) {
+    &__item:not(:last-child) {
       margin-bottom: 30px;
     }
   }

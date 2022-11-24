@@ -39,10 +39,12 @@ body {
 }
 
 section {
+  padding-top: 94px;
   padding-bottom: 94px;
 }
 @media screen and (max-width: 1199px) {
   section {
+    padding-top: 60px;
     padding-bottom: 60px;
   }
 }
@@ -420,7 +422,7 @@ label {
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   transition: color 250ms var(--timing-function);
@@ -443,15 +445,42 @@ label {
   border-radius: 2px;
   transition: color 250ms var(--timing-function);
 }
+@media screen and (max-width: 767px) {
+  .header-link {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .header-link {
+    font-size: 5vw;
+  }
+}
 
 .logo {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
-  font-size: 26px;
   line-height: 1.2;
-  color: var(--logo-color);
   text-decoration: none;
+  letter-spacing: 0.03em;
+  color: var(--logo-color);
+}
+@media screen and (min-width: 480px) {
+  .logo {
+    padding: 16px 0;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    padding: 26px 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    padding: 0;
+    font-size: 26px;
+  }
 }
 
 .colortext {
@@ -464,6 +493,57 @@ label {
 }
 
 /*---------- Navigation---------- */
+.menu-mobile {
+  position: relative;
+  z-index: 22;
+  display: flex;
+  margin-left: 276px;
+  padding: 10px 0;
+  border: none;
+  color: var(--primary-text-color);
+  background-color: transparent;
+}
+.menu-mobile:hover .mobile-icon, .menu-mobile:focus .mobile-icon {
+  fill: var(--accent-color);
+}
+.menu-mobile.is-open {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+}
+.menu-mobile .icon-cross {
+  display: none;
+}
+.menu-mobile.is-open .icon-cross {
+  display: block;
+}
+.menu-mobile.is-open .icon-menu {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+    z-index: 21;
+    display: none;
+    background-color: var(--tertiary-text-color);
+  }
+  .menu-container.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -479,6 +559,11 @@ label {
 }
 .nav-list .item + .item {
   margin-left: 50px;
+}
+@media screen and (max-width: 767px) {
+  .nav-list {
+    display: block;
+  }
 }
 
 .site-list {
@@ -543,10 +628,16 @@ label {
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 1199px) {
+  .hero-overlay {
+    height: 400px;
+    padding-top: 118px;
+    padding-bottom: 118px;
+  }
+}
 
 .page-title {
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   width: 696px;
   font-weight: 900;
   font-size: 44px;
@@ -555,6 +646,13 @@ label {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--tertiary-text-color);
+}
+@media screen and (max-width: 1199px) {
+  .page-title {
+    max-width: 360px;
+    font-size: 26px;
+    line-height: 1.6;
+  }
 }
 
 .main-button {
@@ -589,7 +687,7 @@ label {
   margin: 0;
 }
 @media screen and (max-width: 767px) {
-  .properties__list .properties__item:not(:last-child) {
+  .properties__list__item:not(:last-child) {
     margin-bottom: 30px;
   }
 }
@@ -655,6 +753,11 @@ label {
 .about {
   padding-top: 0px;
 }
+@media screen and (max-width: 1199px) {
+  .about {
+    display: none;
+  }
+}
 
 .about__list {
   list-style: none;
@@ -688,16 +791,30 @@ label {
 .team {
   background-color: var(--button-bc);
 }
+@media screen and (max-width: 767px) {
+  .team__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .team__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
 
 .team__list {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  display: flex;
-  height: 428px;
 }
-.team__list .team__item + .team__item {
-  margin-left: 30px;
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }
 
 .team__item {
@@ -706,16 +823,27 @@ label {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
+@media screen and (min-width: 768px) {
+  .team__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team__item {
+    flex-basis: calc((100% - 90px) / 4);
+  }
+}
 .team__item:hover .team__img {
   transform: scale(1.2);
 }
 
 .team__img {
+  width: 100%;
   transition: transform 1000ms ease;
 }
 
 .team__workers {
-  padding: 30px 0;
+  padding: 24px 0;
 }
 
 .team__name {
@@ -838,6 +966,24 @@ label {
   padding: 60px 0;
   background-color: var(--footer-bc);
 }
+@media screen and (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .footer__address {
+    margin-bottom: 60px;
+  }
+}
 
 .footer__logo {
   font-family: "Raleway";
@@ -848,7 +994,7 @@ label {
   color: var(--tertiary-text-color);
   text-decoration: none;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 1199px) {
   .footer__logo {
     display: flex;
     justify-content: center;
@@ -909,17 +1055,19 @@ label {
   color: var(--accent-color);
 }
 
-.join {
-  margin-top: 60px;
+@media screen and (max-width: 1199px) {
+  .join {
+    margin-bottom: 60px;
+  }
 }
-.join-text {
+.join__text {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--tertiary-text-color);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.join-list {
+.join__list {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -928,18 +1076,18 @@ label {
   margin-top: 20px;
 }
 @media screen and (min-width: 480px) {
-  .join-list {
+  .join__list {
     justify-content: center;
   }
 }
-.join .join-item + .join-item {
+.join .join__item + .join__item {
   margin-left: 10px;
 }
-.join-item {
+.join__item {
   width: 44px;
   height: 44px;
 }
-.join-link {
+.join__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -949,19 +1097,22 @@ label {
   background-color: var(--icon-bc);
   transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
-.join-link:hover, .join-link:focus {
+.join__link:hover, .join__link:focus {
   color: var(--tertiary-text-color);
   background-color: var(--accent-color);
 }
 
-.social-icon {
+.social__icon {
   fill: currentColor;
 }
 
-.signup {
-  margin-top: 60px;
+@media screen and (min-width: 1200px) {
+  .signup__form {
+    display: flex;
+    align-items: center;
+  }
 }
-.signup-text {
+.signup__text {
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
@@ -969,8 +1120,8 @@ label {
   color: var(--tertiary-text-color);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.signup .footer-input {
-  width: 358px;
+.signup .footer__input {
+  width: 100%;
   height: 50px;
   padding: 15px 16px;
   font-size: 16px;
@@ -982,11 +1133,16 @@ label {
   border-radius: 4px;
 }
 @media screen and (min-width: 480px) {
-  .signup .footer-input {
+  .signup .footer__input {
     width: 450px;
   }
 }
-.signup-button {
+@media screen and (min-width: 1200px) {
+  .signup .footer__input {
+    width: 358px;
+  }
+}
+.signup__button {
   position: relative;
   width: 200px;
   margin-left: 12px;
@@ -1001,17 +1157,17 @@ label {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms var(--timing-function);
 }
-@media screen and (min-width: 480px) {
-  .signup-button {
+@media screen and (max-width: 1199px) {
+  .signup__button {
     margin: 20px auto 0;
   }
 }
-.signup-button:hover, .signup-button:focus {
+.signup__button:hover, .signup__button:focus {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.send-icon {
+.signup__icon {
   position: absolute;
   margin-left: 10px;
 }
