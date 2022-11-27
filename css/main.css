@@ -38,6 +38,10 @@ body {
   letter-spacing: 0.03em;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -214,6 +218,8 @@ label {
   width: 100%;
   height: 100%;
   opacity: 1;
+  z-index: 23;
+  overflow-y: scroll;
   transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -231,9 +237,6 @@ label {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
-  min-height: 581px;
-  padding: 40px 40px;
   visibility: visible;
   opacity: 1;
   transition: transform 250ms var(--timing-function) opacity 250ms var(--timing-function) visibility 250ms var(--timing-function);
@@ -241,6 +244,24 @@ label {
   border-radius: 4px;
   background-color: var(--tertiary-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .modal {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1199px) {
+  .modal {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
+}
+.modal-form {
+  padding: 40px;
 }
 .modal-text {
   margin-bottom: 12px;
@@ -307,7 +328,6 @@ label {
 }
 
 .form-area {
-  width: 448px;
   height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -319,8 +339,6 @@ label {
 
 .agreement-form {
   margin-bottom: 30px;
-  padding-right: 11px;
-  padding-left: 37px;
 }
 
 .check-input {
@@ -338,9 +356,7 @@ label {
 }
 
 .checkbox {
-  position: absolute;
-  bottom: 124px;
-  left: 54px;
+  margin-right: 8px;
   width: 16px;
   height: 15px;
   border: 2px solid var(--body-text-color);
@@ -349,12 +365,24 @@ label {
 }
 
 .agreement-label {
+  display: flex;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.2;
   letter-spacing: 0.03em;
+}
+@media screen and (max-width: 1199px) {
+  .agreement-label {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .agreement-label {
+    justify-content: center;
+  }
 }
 
 .agreement-text {
+  margin-left: 2px;
   text-decoration: underline;
   color: var(--accent-color);
 }
@@ -419,8 +447,7 @@ label {
 .header-link {
   text-decoration: none;
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0 32px 0;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -444,10 +471,17 @@ label {
   background-color: var(--accent-color);
   border-radius: 2px;
   transition: color 250ms var(--timing-function);
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .header-link.current::after {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 767px) {
   .header-link {
     font-size: 40px;
+    padding: 0;
   }
 }
 @media screen and (max-width: 479px) {
@@ -473,12 +507,14 @@ label {
 }
 @media screen and (min-width: 768px) {
   .logo {
+    margin-right: 88px;
     padding: 26px 0;
   }
 }
 @media screen and (min-width: 1200px) {
   .logo {
-    padding: 0;
+    margin-right: 93px;
+    padding: 24px 0 25px 0;
     font-size: 26px;
   }
 }
@@ -536,11 +572,20 @@ label {
     padding: 48px 40px;
     z-index: 21;
     display: none;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
     background-color: var(--tertiary-text-color);
   }
   .menu-container.is-open {
     display: flex;
     flex-direction: column;
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -549,20 +594,34 @@ label {
   align-items: center;
 }
 
+.menu-nav {
+  flex-grow: 1;
+}
+
 .nav-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
   display: flex;
   align-items: center;
-  margin-left: 93px;
-}
-.nav-list .item + .item {
-  margin-left: 50px;
 }
 @media screen and (max-width: 767px) {
   .nav-list {
     display: block;
+    margin: 0;
+  }
+  .nav-list .nav-item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-list .nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav-list {
+    margin-right: 305px;
   }
 }
 
@@ -571,49 +630,93 @@ label {
   padding-left: 0;
   margin: 0;
   display: flex;
-  align-items: center;
-  margin-left: auto;
 }
-.site-list .item + .item {
-  margin-left: 50px;
+@media screen and (max-width: 767px) {
+  .site-list {
+    flex-direction: column-reverse;
+    margin-bottom: 64px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .site-list {
+    margin-left: 84px;
+    flex-direction: column;
+  }
+  .site-list .site-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .site-list .site-item:not(:last-child) {
+    margin-right: 40px;
+  }
 }
 
-.link-mail-header {
+.site-link {
   text-decoration: none;
   display: flex;
   align-items: center;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   transition: color 250ms var(--timing-function);
   color: var(--secondary-text-color);
 }
-.link-mail-header:hover, .link-mail-header:focus {
+.site-link:hover, .site-link:focus {
   color: var(--accent-color);
 }
-
-.envelope-icon {
-  margin-right: 10px;
-  fill: currentColor;
+@media screen and (max-width: 767px) {
+  .site-link {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .site-link.current {
+    margin-bottom: 32px;
+    font-size: 5vw;
+    color: var(--accent-color);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .site-link {
+    padding: 32px 0 32px 0;
+  }
 }
 
-.link-phone {
-  text-decoration: none;
+.site-icon {
+  margin-right: 10px;
+  fill: currentColor;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .site-icon {
+    display: block;
+  }
+}
+
+.social-menu {
   display: flex;
   align-items: center;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  transition: color 250ms var(--timing-function);
-  color: var(--secondary-text-color);
 }
-.link-phone:hover, .link-phone:focus {
-  color: var(--accent-color);
+@media screen and (min-width: 768px) {
+  .social-menu {
+    display: none;
+  }
+}
+.social-menu .social-line {
+  width: 22px;
+  height: 0px;
+  color: rgba(33, 33, 33, 0.2);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transform: rotate(90deg);
 }
 
-.phone-icon {
-  margin-right: 10px;
-  fill: currentColor;
+.social-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
 }
 
 .hero-overlay {

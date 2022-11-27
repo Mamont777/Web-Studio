@@ -6,6 +6,10 @@ body {
   letter-spacing: 0.03em;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 section {
   @media screen and (max-width: 1199px) {
     padding-top: 60px;

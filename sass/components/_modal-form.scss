@@ -5,6 +5,9 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  z-index: 23;
+  overflow-y: scroll;
+
   transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
   background-color: rgba(0, 0, 0, 0.2);
 
@@ -23,9 +26,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
-  min-height: 581px;
-  padding: 40px 40px;
   visibility: visible;
   opacity: 1;
   transition: transform 250ms var(--timing-function) opacity 250ms var(--timing-function) visibility
@@ -35,6 +35,22 @@
   background-color: var(--tertiary-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 1199px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+
+  &-form {
+    padding: 40px;
+  }
 
   &-text {
     margin-bottom: 12px;
@@ -99,7 +115,6 @@
 }
 
 .form-area {
-  width: 448px;
   height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -112,8 +127,6 @@
 
 .agreement-form {
   margin-bottom: 30px;
-  padding-right: 11px;
-  padding-left: 37px;
 }
 
 .check-input {
@@ -130,9 +143,7 @@
 }
 
 .checkbox {
-  position: absolute;
-  bottom: 124px;
-  left: 54px;
+  margin-right: 8px;
   width: 16px;
   height: 15px;
   border: 2px solid var(--body-text-color);
@@ -141,12 +152,20 @@
 }
 
 .agreement-label {
+  display: flex;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.2;
   letter-spacing: 0.03em;
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1200px) {
+    justify-content: center;
+  }
 }
 
 .agreement-text {
+  margin-left: 2px;
   text-decoration: underline;
 
   color: var(--accent-color);

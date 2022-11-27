@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/main.min.css" />
 </head>
 
-<body>
+<body class="modal-open">
     <!-- --------- Шапка сторінки ----------->
 
     <header class="header">
@@ -35,28 +35,35 @@
                 </button>
                 <div class="menu-container" id="menu-container" data-menu>
                     <div class="menu-nav">
-                        <ul class="nav-list list">
-                            <li class="item"><a class="header-link current" href="./index.html">Студія</a></li>
-                            <li class="item"><a class="header-link" href="./potfolio.html">Портфоліо</a></li>
-                            <li class="item"><a class="header-link" href="">Контакти</a></li>
+                        <ul class="nav-list">
+                            <li class="nav-item"><a class="header-link current" href="./index.html">Студія</a></li>
+                            <li class="nav-item"><a class="header-link" href="./potfolio.html">Портфоліо</a></li>
+                            <li class="nav-item"><a class="header-link" href="">Контакти</a></li>
                         </ul>
                     </div>
-
-
                     <div class="menu-contacts">
                         <ul class="site-list">
-                            <li class="item">
-                                <a class="link-mail-header" href="mailto:info@devstudio.com"><svg class="envelope-icon"
-                                        width="16" height="12">
+                            <li class="site-item">
+                                <a class="site-link" href="mailto:info@devstudio.com"><svg class="site-icon" width="16"
+                                        height="12">
                                         <use href="./images/icons.svg#icon-envelope"></use>
                                     </svg>info@devstudio.com</a>
                             </li>
-                            <li class="item"><a class="link-phone" href="tel:+380961111111">
-                                    <svgclass="phone-icon" width="10" height="16">
+                            <li class="site-item"><a class="site-link current" href="tel:+380961111111">
+                                    <svg class="site-icon" width="10" height="16">
                                         <use href="./images/icons.svg#icon-phone"></use>
-                                        </svg>+38 096 111 11 11
+                                    </svg>+38 096 111 11 11
                                 </a>
                             </li>
+                        </ul>
+                        <ul class="social-menu list">
+                            <li class="social-menu item"><a href="#" class="social-link link">Instagramm</a><span
+                                    class="social-line"></span></li>
+                            <li class="social-menu item"><a href="#" class="social-link link">Twitter</a><span
+                                    class="social-line"></span></li>
+                            <li class="social-menu item"><a href="#" class="social-link link">Facebook</a><span
+                                    class="social-line"></span></li>
+                            <li class="social-menu item"><a href="#" class="social-link link">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,12 +83,11 @@
         </section>
 
         <!----------------- Модальне вікно--------------- -->
-        <!-- 
+
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-                <p class="modal-text">Залиште свої дані, ми вам передзвонимо</p>
-                <form autocomplete="off" novalidate>
-
+                <form class="modal-form" autocomplete="off" novalidate>
+                    <p class="modal-text">Залиште свої дані, ми вам передзвонимо</p>
                     <div class="form-field">
                         <label class="form-label" for="user-name">Ім'я</label>
                         <input class="form-input" type="text" name="user-name" id="user-name" required>
@@ -133,7 +139,7 @@
                     </svg>
                 </button>
             </div>
-        </div> -->
+        </div>
 
 
         <!-- ----Унікальний контент сторінки ------->
