@@ -13,6 +13,10 @@
     @media screen and (min-width: 1200px) {
       justify-content: space-between;
     }
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   &__address {
@@ -43,7 +47,6 @@
 }
 .footer__list {
   @include list;
-  text-align: center;
   font-style: normal;
 }
 
@@ -101,7 +104,6 @@
   }
 
   &__text {
-    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
 
@@ -161,7 +163,6 @@
   &__text {
     font-weight: 700;
     margin-bottom: 20px;
-    text-align: center;
     text-transform: uppercase;
 
     color: var(--tertiary-text-color);

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/main.min.css" />
 </head>
 
-<body>
+<body class="modal-open">
     <!-- -------Шапка сторінки---- -->
 
     <header class="header">
@@ -25,27 +25,51 @@
         <div class="container">
             <nav class="site-nav">
                 <a class="logo" href="./index.html"><span class="colortext">Web</span>Studio</a>
+                <button type="button" class="menu-mobile" aria-expanded="false" aria-controls="menu-container"
+                    data-menu-button>
+                    <svg class="mobile-icon" width="40" height="40" aria-label="Перемикач мобільного меню">
+                        <use class="icon-menu" href="./images/icons.svg#menu"></use>
+                        <use class="icon-cross" href="./images/icons.svg#cross"></use>
+                    </svg>
+                </button>
+                <div class="menu-container" id="menu-container" data-menu>
+                    <div class="menu-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a class="header-link" href="./index.html">Студія</a></li>
+                            <li class="nav-item"><a class="header-link current" href="./portfolio.html">Портфоліо</a>
+                            </li>
+                            <li class="nav-item"><a class="header-link" href="">Контакти</a></li>
+                        </ul>
+                    </div>
 
-                <ul class="nav-list">
-                    <li class="item"><a class="header-link" href="./index.html">Студія</a></li>
-                    <li class="item"><a class="header-link current" href="./portfolio.html">Портфоліо</a></li>
-                    <li class="item"><a class="header-link" href="">Контакти</a></li>
-                </ul>
+                    <div class="menu-contacts">
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <a class="site-link" href="mailto:info@devstudio.com"><svg class="site-icon" width="16"
+                                        height="12">
+                                        <use href="./images/icons.svg#icon-envelope"></use>
+                                    </svg>info@devstudio.com</a>
+                            </li>
+                            <li class="site-item">
+                                <a class="site-link current" href="tel:+380961111111"><svg class="site-icon" width="10"
+                                        height="16">
+                                        <use href="./images/icons.svg#icon-phone"></use>
+                                    </svg>+38 096 111 11 11</a>
+                            </li>
+                        </ul>
+                        <ul class="social-menu list">
+                            <li class="social-menu item"><a href="#" class="social-link link">Instagramm</a><span
+                                    class="social-line"></span>
+                            </li>
+                            <li class="social-menu item"><a href="#" class="social-link link">Twitter</a><span
+                                    class="social-line"></span></li>
+                            <li class="social-menu item"><a href="#" class="social-link link">Facebook</a><span
+                                    class="social-line"></span></li>
+                            <li class="social-menu item"><a href="#" class="social-link link">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-
-            <ul class="site-list">
-                <li class="item">
-                    <a class="link-mail-header" href="mailto:info@devstudio.com"><svg class="envelope-icon" width="16"
-                            height="12">
-                            <use href="./images/icons.svg#icon-envelope"></use>
-                        </svg>info@devstudio.com</a>
-                </li>
-                <li class="item">
-                    <a class="link-phone" href="tel:+380961111111"><svg class="phone-icon" width="10" height="16">
-                            <use href="./images/icons.svg#icon-phone"></use>
-                        </svg>+38 096 111 11 11</a>
-                </li>
-            </ul>
         </div>
     </header>
 
@@ -67,7 +91,7 @@
                 <ul class="projects-list">
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj1.jpg" alt="Проєкт1" width="370" />
+                                <img class="projects-img" src="./images/prj1.jpg" alt="Проєкт1" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -84,7 +108,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj2.jpg" alt="Проєкт2" width="370" />
+                                <img class="projects-img" src="./images/prj2.jpg" alt="Проєкт2" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -101,7 +125,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj3.jpg" alt="Проєкт3" width="370" />
+                                <img class="projects-img" src="./images/prj3.jpg" alt="Проєкт3" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -118,7 +142,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj4.jpg" alt="Проєкт4" width="370" />
+                                <img class="projects-img" src="./images/prj4.jpg" alt="Проєкт4" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -135,7 +159,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj5.jpg" alt="Проєкт5" width="370" />
+                                <img class="projects-img" src="./images/prj5.jpg" alt="Проєкт5" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -152,7 +176,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj6.jpg" alt="Проєкт6" width="370" />
+                                <img class="projects-img" src="./images/prj6.jpg" alt="Проєкт6" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -169,7 +193,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj7.jpg" alt="Проєкт7" width="370" />
+                                <img class="projects-img" src="./images/prj7.jpg" alt="Проєкт7" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -186,7 +210,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj8.jpg" alt="Проєкт8" width="370" />
+                                <img class="projects-img" src="./images/prj8.jpg" alt="Проєкт8" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -203,7 +227,7 @@
                     </li>
                     <li class="item-cards"><a href="#" class="cards-link">
                             <div class="cards-thumb">
-                                <img src="./images/prj9.jpg" alt="Проєкт9" width="370" />
+                                <img class="projects-img" src="./images/prj9.jpg" alt="Проєкт9" width="370" />
                                 <div class="cards-overlay">
                                     <p class="cards-text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу
@@ -226,55 +250,57 @@
     <!------Підвал сторінки --------->
     <footer class="footer">
 
-        <div class="footer-container container">
-            <div class="address">
-                <a class="logo-footer" href="./index.html"><span class="colortext">Web</span>Studio</a>
-                <address class="footer-address">
-                    <ul class="list-footer list">
-                        <li class="item">
-                            <a class="link-address" href="https://goo.gl/maps/URMM1kWDQXA9ZW2b9" target="_blank"
+        <div class="footer__container container">
+            <div class="footer__address">
+                <a class="footer__logo" href="./index.html"><span class="colortext">Web</span>Studio</a>
+                <address class="footer__contacts">
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a class="footer__link" href="https://goo.gl/maps/URMM1kWDQXA9ZW2b9" target="_blank"
                                 rel="noreferrer noopener">м.
                                 Київ, пр-т Лесі Українки, 26</a>
                         </li>
-                        <li class="item"><a class="link-mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                        <li class="footer__item"><a class="footer__mail"
+                                href="mailto:info@devstudio.com">info@devstudio.com</a>
                         </li>
-                        <li class="item"><a class="link-number" href="tel:+380961111111">+38 096 111 11 11</a></li>
+                        <li class="footer__item"><a class="footer__number" href="tel:+380961111111">+38 096 111 11
+                                11</a></li>
                     </ul>
                 </address>
             </div>
             <div class="join">
-                <p class="join-text">ПРИЄДНУЙТЕСЬ</p>
-                <ul class="join-list list">
-                    <li class="join-item"><a href="https://www.instagram.com" class="join-link"><svg class="social-icon"
-                                width="20" height="20">
+                <p class="join__text">ПРИЄДНУЙТЕСЬ</p>
+                <ul class="join__list">
+                    <li class="join__item"><a href="https://www.instagram.com" class="join__link"><svg
+                                class="social__icon" width="20" height="20">
                                 <use href="./images/icons.svg#icon-instagram"></use>
                             </svg></a></li>
-                    <li class="join-item"><a href="https://www.twitter.com" class="join-link"><svg class="social-icon"
-                                width="20" height="20">
+                    <li class="join__item"><a href="https://www.twitter.com" class="join__link"><svg
+                                class="social__icon" width="20" height="20">
                                 <use href="./images/icons.svg#icon-twitter"></use>
                             </svg></a></li>
-                    <li class="join-item"><a href="https://www.facebook.com" class="join-link"><svg class="social-icon"
-                                width="20" height="20">
+                    <li class="join__item"><a href="https://www.facebook.com" class="join__link"><svg
+                                class="social__icon" width="20" height="20">
                                 <use href="./images/icons.svg#icon-facebook"></use>
                             </svg></a></li>
-                    <li class="join-item"><a href="https://www.linkedin.com" class="join-link"><svg class="social-icon"
-                                width="20" height="20">
+                    <li class="join__item"><a href="https://www.linkedin.com" class="join__link"><svg
+                                class="social__icon" width="20" height="20">
                                 <use href="./images/icons.svg#icon-linkedin"></use>
                             </svg></a></li>
                 </ul>
             </div>
             <div class="signup">
-                <p class="signup-text">Підпишіться на розсилку</p>
-                <form class="footer-form" name="signup-form" autocomplete="off">
-                    <input class="footer-input" type="email" name="email" placeholder="E-mail" required>
-                    <button class="signup-button" type="submit">Підписатися<svg class="send-icon" width="24"
+                <p class="signup__text">Підпишіться на розсилку</p>
+                <form class="signup__form" name="signup-form" autocomplete="off">
+                    <input class="footer__input" type="email" name="email" placeholder="E-mail" required>
+                    <button class="signup__button" type="submit">Підписатися<svg class="signup__icon" width="24"
                             height="24">
                             <use href="./images/icons.svg#icon-send"></use>
                         </svg></button>
                 </form>
             </div>
     </footer>
-
+    <script src="./js/mobile.js"></script>
 </body>
 
 </html>

@@ -45,7 +45,19 @@
   }
 
   @media screen and (min-width: 1200px) {
-    width: 528px;
+    width: 95%;
+    height: 95%;
+    max-width: 528px;
+    max-height: 581px;
+    overflow: scroll;
+  }
+
+  @media screen and (max-width: 1199px) {
+    width: 95%;
+    max-width: 450px;
+    height: 95%;
+    max-height: 609px;
+    overflow: scroll;
   }
 
   &-form {

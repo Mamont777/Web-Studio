@@ -4,6 +4,25 @@
   flex-wrap: wrap;
   margin-top: 50px;
   gap: 30px;
+  @media screen and (max-width: 767px) {
+    display: block;
+    .item-cards:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .item-cards {
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 30px) / 2);
+    }
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 60px) / 3);
+    }
+  }
+}
+
+.projects-list .item-cards {
+  display: inline-block;
 }
 
 .cards-link {
@@ -26,6 +45,12 @@
   overflow: hidden;
 }
 
+.projects-img {
+  @media screen and (max-width: 767px) {
+    width: 450px;
+  }
+}
+
 .cards-overlay {
   position: absolute;
   bottom: 0;
@@ -42,6 +67,8 @@
 .cards-text {
   font-size: 18px;
   line-height: 1.5;
+  letter-spacing: 0.03em;
+
   color: var(--tertiary-text-color);
 }
 
