@@ -1333,6 +1333,19 @@ label {
 .button-list .item + .item {
   margin-left: 8px;
 }
+@media screen and (max-width: 479px) {
+  .button-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    row-gap: 15px;
+  }
+  .button-list .item + .item {
+    margin-left: 0;
+  }
+}
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .button-list {
     flex-wrap: wrap;
