@@ -1,12 +1,6 @@
 .properties__list {
   @include list;
 
-  @media screen and (max-width: 767px) {
-    &__item:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +8,11 @@
   }
 
   .properties__item {
+    @media screen and (max-width: 767px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
     @media screen and (min-width: 768px) {
       flex-basis: calc((100% - 30px) / 2);
     }
@@ -24,9 +23,10 @@
   }
 
   .properties__content {
-    width: 450px;
     height: 120px;
-    padding: 25px 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: var(--button-bc);
     border-radius: 4px;

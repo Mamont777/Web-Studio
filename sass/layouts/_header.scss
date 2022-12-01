@@ -50,7 +50,7 @@
     }
 
     @media screen and (max-width: 479px) {
-      font-size: 5vw;
+      font-size: 10vw;
     }
   }
 }
@@ -64,6 +64,10 @@
   letter-spacing: 0.03em;
 
   color: var(--logo-color);
+
+  @media screen and (max-width: 479px) {
+    font-size: 24px;
+  }
 
   @media screen and (min-width: 480px) {
     padding: 16px 0;
@@ -95,7 +99,7 @@
   position: relative;
   z-index: 22;
   display: flex;
-  margin-left: 276px;
+  margin-left: auto;
 
   border: none;
   color: var(--primary-text-color);
