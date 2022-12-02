@@ -1393,6 +1393,9 @@ label {
   gap: 30px;
 }
 
+.item-cards:hover, .item-cards:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 @media screen and (max-width: 767px) {
   .item-cards .item-cards:not(:last-child) {
     margin-bottom: 30px;
@@ -1413,10 +1416,7 @@ label {
   text-decoration: none;
   transition: box-shadow 250ms var(--timing-function);
 }
-.cards-link:hover, .cards-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.cards-link .cards-overlay {
+.cards-link:hover .cards-overlay, .cards-link:focus .cards-overlay {
   transform: translateY(0);
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
